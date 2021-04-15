@@ -1,0 +1,40 @@
+</body>
+<script>
+    let k=1;
+    const show=()=>{
+       
+        let btn = document.getElementById('dropBox');
+        console.log(btn.style.display);
+      console.log(  btn.style.display=='');
+        if (btn.style.display=== '' ){
+            btn.style.display='flex';
+        }
+        else {
+            btn.style.display='';
+        }
+    }
+
+    const slideit = ()=>{
+        
+        let slidebar = document.getElementById('slideBar');
+        let slideBtn = document.getElementById('slideBtn');
+        if (k%2 ==0)
+        {
+            console.log(k%2);
+           slidebar.classList.add('slideIn');
+           slidebar.classList.remove('slideOut');
+           k++;
+           slideBtn.innerHTML='>';
+        } 
+        else{
+           slidebar.classList.add('slideOut');
+           slidebar.classList.remove('slideIn'); 
+          k++;
+           slideBtn.innerHTML='<';
+        }
+    }
+</script>
+<footer style="font-size: 1.5rem ">
+    Made with &#10084; by<a href="https://ishubhamrana.github.io/" target="_blank"> &nbsp;<u> Shubham Rana</u></a>
+</footer>
+</html>

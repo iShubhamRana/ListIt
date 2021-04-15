@@ -1,0 +1,25 @@
+<%- include('bootstrapHeader') -%>
+    <main class="form-signin">
+      <img class="mb-4" src="/Capture-removebg-preview.png" alt="" width="72" height="57">
+        <form action="/" method="post">
+          
+          <h1 class="h3 mb-3 fw-normal text-center">Welcome to <span class="fs-1 text-secondary">'List It'</span></h1>
+      
+          <div class="form-floating">
+            <input type="text" name="userName" class="form-control top" id="userName" placeholder="Username" autocomplete="off" required>
+            <label for="userName">Username</label>
+          </div>
+          
+          <div class="form-floating">
+            <input type="password" name="password" class="form-control bottom" id="password" placeholder="password" required>
+            <label for="email">Password</label>
+          </div>
+           <p> <%=error %></p>
+          <p>Dont have account? <a href="/signup">Create</a></p>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+          <p class="mt-5 mb-3 text-muted text-center">  Made with &#10084; by<a href="https://ishubhamrana.github.io/" target="_blank">&nbsp;<u> Shubham Rana</u></a></p>
+        </form>
+      </main>
+    
+</body>
+</html>

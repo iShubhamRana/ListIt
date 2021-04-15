@@ -1,0 +1,23 @@
+.navbar{
+    flex-direction: column;
+    height: 10.5rem;
+    justify-content: space-around;
+}
+.listDisplayer{
+    top:10rem;
+}
+#dropBox{
+    right:20rem;
+    top:11rem;
+}
+.listDeleter{
+    position: absolute;
+    right:1rem;
+    top: 11rem;
+  }
+  .listDeleteButton img{
+    
+      width: 3rem;
+      height: 3rem;
+  }
+  

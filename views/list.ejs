@@ -1,0 +1,72 @@
+
+  <%- include('header') -%>
+<nav class="navbar">
+<div class="logo">
+    <img src="/Capture-removebg-preview.png"/>
+    <h1 class="font1 welcome"> Welcome <span><%=name  %> !</span></h1>
+</div>
+     <div class="create-box font1">
+         <h1>New List</h1>
+         <button class="createbtn" onclick='show()'>Create</button>
+          
+     </div>
+     
+</nav>
+ <div class="dropBox" id="dropBox">
+     <form action="/create" method="POST">
+        <label for="newList">List name</label>
+          <input   class="newList" id="newList"  name="newListName"   required />
+           <button class="finalCreatebtn">Create</button>  
+     </form>
+ </div>
+
+ 
+
+  <div class="box">
+      <h1 id="heading"  class="font1"> <%= listTitle  %> </h1>
+  </div>
+  <div class="box">            
+    <%  finalList.forEach( (element)=>{   %>
+    <form action='/delete'  method="post">
+        <div class="item">
+            <input type="checkbox" name="check" value= <%=element._id %> onchange="this.form.submit()">
+            <p class='itemContainer'> <%= element.name %></p>
+            <input type="hidden"  name="listName" value=<%= listTitle %>  />
+        </div> 
+    </form>
+    <%  })     %>
+   
+
+   <form class="item" action="/home" method="post">
+      
+       <input name='item' type="text" id="addItem" autocomplete="off" placeholder="New Item">
+       <button  class='btn' type="submit" name="button" value=<%=listTitle%> >+</button>
+    </form>
+</div>
+<div class="listDisplayer">
+    <div id='slideBar' class="slideIn">
+    <p class="font1"> Lists :</p>
+    <p> <a href="/home">Today</a></p>
+    <%     user.lists.forEach((e)=>{   %>
+             <p><a href="/home/<%=e.name%>"> <%= e.name %> </a></p>
+   <%       })    %>
+    <p class="logP font1"> 
+        <form id='logout' action="/logout" method="POST">
+        <input type="hidden" value="logout" >
+       <a  class='loglink font1'style="cursor: pointer" onclick="document.getElementById('logout').submit()">Log out</a>
+      </form>
+    </p>
+   </div>
+   <button class="slide" id="slideBtn" onclick="slideit()"> > </button>
+</div>
+<% if (listTitle != "Today") { %>}
+<div class="listDeleter">
+    <form action="/deletelist" method="POST">
+        <input type="hidden" name='listName' value=<%= listTitle %> >
+    <button type='submit'  class="listDeleteButton" >
+        <img src="/delete-removebg-preview.png" >        
+    </button>
+</form>
+</div>
+<% } %>
+<%- include('footer') -%>
