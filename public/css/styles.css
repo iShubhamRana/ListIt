@@ -216,9 +216,7 @@ span{
   display: flex;
   flex-direction: row;
 }
-.listDisplayer div{
- 
-}
+
 .slide{
   height: 5rem;
   justify-content: center;
