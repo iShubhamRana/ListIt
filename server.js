@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const { name } = require('ejs');
 const e = require('express');
 require('dotenv').config();
-mongoose.connect("mongodb+srv://admin-shubham:rana2001shubham@cluster0.kzsaf.mongodb.net/usersDB",
+mongoose.connect("mongodb+srv://"+process.env.name+":" + process.env.password,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     if (err) console.log(err);
